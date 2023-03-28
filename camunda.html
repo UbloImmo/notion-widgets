@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Pass the camunda id as the hash e.g. <url>#6a953b31-4596-4133-94d1-99b8z00cdc5c -->
+<html>
+  <head>
+    <title>Camunda Notion Widgets</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./reset.css">
+  </head>
+  <body></body>
+  <script>
+    const documentId = location.hash.slice(1);
+
+    function createIframe() {
+      var iframe = document.createElement('iframe');
+      iframe.src = `https://modeler.cloud.camunda.io/embed/${documentId}`;
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.allowfullscreen = true;
+      document.body.appendChild(iframe);
+    }
+
+    window.onload = createIframe;
+  </script>
+</html>
